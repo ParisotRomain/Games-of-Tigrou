@@ -1,6 +1,7 @@
 package hello;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URL;
 
 public class Game {
@@ -20,12 +21,12 @@ public class Game {
 	private static String motAAfficher= ".....";
 
 	private static Integer erreurs = 0;
-	
-	private static boolean gameLost = false;
 
 	public static void initNewGame() {
 		// on ouvre le fichier
+		System.err.println("Initialisation du game");
 		File fichier = new File(url.getPath());
+		System.err.println("Fichier ouvert");
 
 		// au début du jeu, on n'a joué aucune lettre
 		strJouees   = "..........................";
