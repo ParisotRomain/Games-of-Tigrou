@@ -1,14 +1,16 @@
 package hello;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 
 public class Game {
 	// fichier avec la liste des mots :
 //	private static URL url = Game.class.getResource("mots.txt");
 	private static InputStream fichier = Game.class.getResourceAsStream("/mots.txt"); 
-	//BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+	private static BufferedReader reader = new BufferedReader(new InputStreamReader(fichier));
 
 	// on crée une liste avec les lettres possible et une avec les lettres jouées
 	private static String strAlphabet = "abcdefghijklmnopqrstuvwxyz";

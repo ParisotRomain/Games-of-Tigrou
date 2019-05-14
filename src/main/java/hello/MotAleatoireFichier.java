@@ -1,7 +1,9 @@
 package hello;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -14,7 +16,8 @@ public class MotAleatoireFichier {
 
 		try {
 			// On ouvre le fichier contenant la liste de mots
-			Scanner sc = new Scanner(fichier);
+			BufferedReader reader = new BufferedReader(new InputStreamReader(fichier));
+			Scanner sc = new Scanner(reader);
 			sc.useDelimiter(delimiter);
 
 			// On parcours tout le fichier pour compter le nombre de mots
