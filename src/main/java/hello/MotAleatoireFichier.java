@@ -1,12 +1,13 @@
 package hello;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class MotAleatoireFichier {
-	public static String getFrom(File fichier) {
+	public static String getFrom(InputStream fichier) {
 		
 		String monMot = null;
 		String delimiter = "\n";
@@ -44,7 +45,7 @@ public class MotAleatoireFichier {
 			// On affiche le mot récupéré
 			return (monMot);
 
-		} catch (FileNotFoundException e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 

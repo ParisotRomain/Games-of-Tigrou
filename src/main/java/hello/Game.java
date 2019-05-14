@@ -7,6 +7,8 @@ import java.net.URL;
 public class Game {
 	// fichier avec la liste des mots :
 	private static URL url = Game.class.getResource("mots.txt");
+	private static InputStream fichier = Game.class.getResourceAsStream("/mots.txt"); 
+	//BufferedReader reader = new BufferedReader(new InputStreamReader(in));
 
 	// on crée une liste avec les lettres possible et une avec les lettres jouées
 	private static String strAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -24,9 +26,8 @@ public class Game {
 
 	public static void initNewGame() {
 		// on ouvre le fichier
-		System.err.println("Initialisation du game");
-		File fichier = new File(url.getPath());
-		System.err.println("Fichier ouvert");
+		
+		//File fichier = new File(url.getPath());
 
 		// au début du jeu, on n'a joué aucune lettre
 		strJouees   = "..........................";
