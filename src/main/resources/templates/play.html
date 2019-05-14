@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Pendu : the game</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Nova+Mono" rel="stylesheet"> 
+		<style>
+			@font-face {
+  				font-family: 'Roboto Mono', monospace;
+  				font-family: 'VT323', monospace;
+  				font-family: 'Share Tech Mono', monospace;
+  				font-family: 'Nova Mono', monospace;
+			}
+			p { font-family:'Share Tech Mono'
+			}
+		</style>
+	</head>
+	<body>
+
+		<p th:text="'Vous avez joué le ' + ${letter} + ' !'" />
+
+		<p th:utext="${#strings.replace(#strings.replace(#strings.escapeJava(drawing),' ','&nbsp'),'\n','&lt;br /&gt;')}"></p>
+
+		<p th:text="${#strings.replace(#strings.escapeJava(wordToFind),' ','&nbsp')}"></p>
+
+		<form action="/play">
+			<input type= "text" name="letter" maxlength="1" autofocus>
+			<button type="submit">OK</button>
+		</form>
+
+		<footer>
+			<form action="/">
+				<button type="submit">back</button>
+			</form>
+		</footer>
+	</body>
+</html>

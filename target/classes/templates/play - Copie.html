@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Pendu : the game</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<style>
+			@font-face {
+  				font-family:VCR_OSD_MONO_1.001;
+  					src: url('fonts/vcr_osd_mono_1.001-webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       					 url('fonts/vcr_osd_mono_1.001-webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       					 url('fonts/vcr_osd_mono_1.001-webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+			}
+		</style>
+	</head>
+	<body>
+
+		<p style="font-family:VCR_OSD_MONO_1">Coucou</p>
+
+		<form action="/play">
+			<input name="letter" maxlength="1">
+			<button type="submit">OK</button>
+		</form>
+
+		<footer>
+			<form action="/">
+				<button type="submit">back</button>
+			</form>
+		</footer>
+	</body>
+</html>
