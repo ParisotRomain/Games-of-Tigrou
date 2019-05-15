@@ -171,7 +171,9 @@ public class Game {
 	public static String getMotAAfficher() {
 		if (erreurs < 8)
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "?  " + motAAfficher + "  ?";
-		else
+		else if (motAAfficher == motATrouver)
+			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "\\  " + motATrouver + "  /";
+		else 
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "X  " + motATrouver + "  X";
 	}
 
