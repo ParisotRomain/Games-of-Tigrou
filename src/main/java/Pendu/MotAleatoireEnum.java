@@ -1,4 +1,4 @@
-package hello;
+package Pendu;
 
 import java.util.Random;
 

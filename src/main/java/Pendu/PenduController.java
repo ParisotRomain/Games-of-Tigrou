@@ -1,4 +1,4 @@
-package hello;
+package Pendu;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
-public class PlayController {
+public class PenduController {
 
-	@GetMapping("/play")
+	@GetMapping("/pendu")
 	public String greeting(@RequestParam(name="letter" , required=false, defaultValue=" "   ) String letter,
 			@RequestParam(name="newGame", required=false, defaultValue="false") boolean newGame,
 			Model model) {
@@ -29,16 +29,16 @@ public class PlayController {
 			}
 //			model.addAttribute("drawing", Game.getDrawing());
 //			model.addAttribute("wordToFind", Game.getMotAAfficher());
-			return "play";
+			return "pendu";
 		case "Lost":
 			model.addAttribute("gameWon", false);
-			return "end";
+			return "pendu-end";
 		case "Won":
 			model.addAttribute("gameWon", true);
-			return "end";
+			return "pendu-end";
 			
 		default :
-			return "play";
+			return "pendu";
 		}
 	}
 

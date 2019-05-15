@@ -1,4 +1,4 @@
-package hello;
+package Pendu;
 
 public class Game {
 	// fichier avec la liste des mots :
@@ -20,8 +20,8 @@ public class Game {
 
 	public static void initNewGame() {
 		// au début du jeu, on n'a joué aucune lettre
-		strJouees   = "..........................";
-		jouees   = strJouees  .toCharArray();
+		strJouees = "..........................";
+		jouees = strJouees.toCharArray();
 
 		// on récupère un mot aléatoire
 //		motATrouver = MotAleatoireFichier.getFrom(fichier).toLowerCase();
@@ -163,10 +163,10 @@ public class Game {
 
 
 	public static String getMotAAfficher() {
-		if (erreurs < 8)
-			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "?  " + motAAfficher + "  ?";
-		else if (motAAfficher == motATrouver)
-			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "\\  " + motATrouver + "  /";
+		if (motAAfficher == motATrouver)
+			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") +"\\  " + motAAfficher + "  /";
+		else if (erreurs < 8)
+			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "?  " + motATrouver + "  ?";
 		else 
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "X  " + motATrouver + "  X";
 	}

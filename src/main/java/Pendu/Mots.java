@@ -1,4 +1,4 @@
-package hello;
+package Pendu;
 
 public enum Mots {
 	angle,
