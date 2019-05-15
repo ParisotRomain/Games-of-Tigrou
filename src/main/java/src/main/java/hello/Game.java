@@ -1,4 +1,4 @@
-package hello;
+package src.main.java.hello;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -8,9 +8,7 @@ import java.net.URL;
 
 public class Game {
 	// fichier avec la liste des mots :
-//	private static URL url = Game.class.getResource("mots.txt");
-	private static InputStream fichier = Game.class.getResourceAsStream("/mots.txt"); 
-	private static BufferedReader reader = new BufferedReader(new InputStreamReader(fichier));
+	private static String fichier = "/mots.txt";
 
 	// on crée une liste avec les lettres possible et une avec les lettres jouées
 	private static String strAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -27,9 +25,6 @@ public class Game {
 	private static Integer erreurs = 0;
 
 	public static void initNewGame() {
-		// on ouvre le fichier
-		//File fichier = new File(url.getPath());
-
 		// au début du jeu, on n'a joué aucune lettre
 		strJouees   = "..........................";
 		jouees   = strJouees  .toCharArray();
@@ -48,7 +43,6 @@ public class Game {
 
 		// on raz le compteur d'erreurs
 		erreurs = 0;
-
 	}
 
 
