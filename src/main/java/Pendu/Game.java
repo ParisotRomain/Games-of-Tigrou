@@ -163,11 +163,11 @@ public class Game {
 
 
 	public static String getMotAAfficher() {
-		if (motAAfficher == motATrouver)
+		if (motAAfficher == motATrouver) 	// game won
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") +"\\  " + motAAfficher + "  /";
-		else if (erreurs < 8)
-			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "?  " + motATrouver + "  ?";
-		else 
+		else if (erreurs < 8) 				// game ongoing
+			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "?  " + motAAfficher + "  ?";
+		else 								// game lost
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") + "X  " + motATrouver + "  X";
 	}
 
@@ -186,7 +186,7 @@ public class Game {
 			return "Lost";
 		else if (motAAfficher == motATrouver)
 			return "Won";
-		else 
+		else
 			return "Ongoing";
 	}
 }
