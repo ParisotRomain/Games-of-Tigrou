@@ -1,4 +1,4 @@
-package src.main.java.hello;
+package hello;
 
 import java.io.BufferedReader;
 import java.io.File;
