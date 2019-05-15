@@ -19,10 +19,16 @@
 		</style>
 	</head>
 	<body>
-		<p th:utext="${#strings.replace(#strings.replace(#strings.escapeJava(drawing),' ','&nbsp'),'\n','&lt;br /&gt;')}"></p>
+	
+		<p th:utext="${#strings.replace(#strings.replace(#strings.replace(
+					#strings.escapeJava(drawing),' ','&nbsp')
+												,'\\','\')
+												,'\n','&lt;br /&gt;')}"></p>
 
-		<p th:text="${#strings.replace(#strings.escapeJava(wordToFind),' ','&nbsp')}"></p>
-		
+		<p th:text="${#strings.replace(#strings.replace(
+					#strings.escapeJava(wordToFind),' ','&nbsp')
+													,'\\','\')}"></p>
+			
     	<p th:text="${gameWon} ? 'Gagné' : 'Perdu'"></p>
     	
     	<footer>

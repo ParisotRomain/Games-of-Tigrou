@@ -22,10 +22,10 @@
 
 		<p th:text="'Vous avez joué le ' + ${letter} + ' !'" />
 
-		<p th:utext="${#strings.replace(#strings.replace(
-					#strings.replace(#strings.escapeJava(drawing),' ','&nbsp')
-																,'\\','\')
-																,'\n','&lt;br /&gt;')}"></p>
+		<p th:utext="${#strings.replace(#strings.replace(#strings.replace(
+					#strings.escapeJava(drawing),' ','&nbsp')
+												,'\\','\')
+												,'\n','&lt;br /&gt;')}"></p>
 
 		<p th:text="${#strings.replace(#strings.escapeJava(wordToFind),' ','&nbsp')}"></p>
 
