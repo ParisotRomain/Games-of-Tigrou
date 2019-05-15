@@ -29,7 +29,7 @@
 
 		<p th:text="${#strings.replace(#strings.escapeJava(wordToFind),' ','&nbsp')}"></p>
 
-		<form action="/pendu">
+		<form action="/pendu" autocomplete="off">
 			<input type= "text" name="letter" maxlength="1" autocomplete="off" autofocus>
 			<button type="submit">OK</button>
 		</form>
