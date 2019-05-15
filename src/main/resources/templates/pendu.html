@@ -20,7 +20,7 @@
 	</head>
 	<body>
 
-		<p th:text="${letter}" />
+		<p th:text="${#strings.replace(#strings.escapeJava(letter),'\\','\')}" />
 
 		<p th:utext="${#strings.replace(#strings.replace(#strings.replace(
 					#strings.escapeJava(drawing),' ','&nbsp')

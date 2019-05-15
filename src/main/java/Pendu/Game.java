@@ -47,9 +47,9 @@ public class Game {
 		char lettreJouee = input.toLowerCase().charAt(0);
 
 		if (strAlphabet.indexOf(lettreJouee) == -1) {	// la lettre ne fait pas partie de l'alphabet
-			return("Lettre invalide !");
+			return("/!\\  Lettre invalide !");
 		} else if (strJouees.indexOf(lettreJouee) != -1) {	// la lettre a déjà été jouée
-			return("Lettre déjà jouée");
+			return("/!\\  Lettre déjà jouée");
 		} else {	// la lettre est correcte
 
 		}
@@ -70,7 +70,7 @@ public class Game {
 			erreurs++;
 		}
 
-		return("Vous avez jooué le " + lettreJouee);
+		return("Vous avez joué le " + lettreJouee + " !");
 	}
 
 
