@@ -1,9 +1,12 @@
 package Pendu;
+
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.nio.charset.Charset;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -18,8 +21,9 @@ public class MotAleatoireFichier {
 			// On ouvre le fichier contenant la liste de mots
 //			URL url = Game.class.getResource(fichier);
 //			File reader = new File(url.getPath());	// can't find the file on webApp
-			InputStream stream = Game.class.getResourceAsStream(System.getenv("MOTS")); 
-			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
+			InputStream inputStream = new ByteArrayInputStream(System.getenv("MOTS").getBytes(Charset.forName("UTF-8")));
+	        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
+			
 			Scanner sc = new Scanner(reader);
 			sc.useDelimiter(delimiter);
 
