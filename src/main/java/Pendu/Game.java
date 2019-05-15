@@ -49,7 +49,7 @@ public class Game {
 		if (strAlphabet.indexOf(lettreJouee) == -1) {	// la lettre ne fait pas partie de l'alphabet
 			return("/!\\  Lettre invalide !");
 		} else if (strJouees.indexOf(lettreJouee) != -1) {	// la lettre a déjà été jouée
-			return("/!\\  Lettre déjà jouée");
+			return("/!\\  Lettre deja jouee");
 		} else {	// la lettre est correcte
 
 		}
@@ -70,7 +70,7 @@ public class Game {
 			erreurs++;
 		}
 
-		return("Vous avez joué le " + lettreJouee + " !");
+		return("Vous avez joue le " + lettreJouee + " !");
 	}
 
 
