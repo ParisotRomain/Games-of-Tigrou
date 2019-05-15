@@ -17,7 +17,7 @@ public class MotAleatoireFichier {
 		try {
 			// On ouvre le fichier contenant la liste de mots
 //			URL url = Game.class.getResource(fichier);
-//			File reader = new File(url.getPath());
+//			File reader = new File(url.getPath());	// can't find the file on webApp
 			InputStream stream = Game.class.getResourceAsStream(fichier); 
 			BufferedReader reader = new BufferedReader(new InputStreamReader(stream));
 			Scanner sc = new Scanner(reader);
