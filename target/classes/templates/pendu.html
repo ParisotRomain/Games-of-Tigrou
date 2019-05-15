@@ -20,7 +20,7 @@
 	</head>
 	<body>
 
-		<p th:text="'Vous avez joué le ' + ${letter} + ' !'" />
+		<p th:text="${letter}" />
 
 		<p th:utext="${#strings.replace(#strings.replace(#strings.replace(
 					#strings.escapeJava(drawing),' ','&nbsp')
