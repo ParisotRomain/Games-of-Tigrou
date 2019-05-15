@@ -44,8 +44,9 @@ public class MotAleatoireFichier {
 			int index = rand.nextInt(nbrMots);
 
 			// On va récupèrer le mot à l'indice choisi
-			stream = Game.class.getResourceAsStream(fichier);
-			reader = new BufferedReader(new InputStreamReader(stream));
+			inputStream = new ByteArrayInputStream(System.getenv("MOTS").getBytes(Charset.forName("UTF-8")));
+			reader = new BufferedReader(new InputStreamReader(inputStream));
+			
 			sc = new Scanner(reader);
 			sc.useDelimiter(delimiter);
 			for (int i = 0; i < index; i++) {
