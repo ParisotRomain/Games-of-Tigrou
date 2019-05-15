@@ -24,8 +24,8 @@ public class Game {
 		jouees = strJouees.toCharArray();
 
 		// on récupère un mot aléatoire
-//		motATrouver = MotAleatoireFichier.getFrom(fichier).toLowerCase();
-		motATrouver = MotAleatoireEnum.get().toLowerCase();
+		motATrouver = MotAleatoireFichier.getFrom(fichier).toLowerCase();
+//		motATrouver = MotAleatoireEnum.get().toLowerCase();
 
 		// on elève les accents du mot à trouver
 		for(int i=0; i<avecAccents.length; i++)
