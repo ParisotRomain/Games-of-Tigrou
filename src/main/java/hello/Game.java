@@ -1,11 +1,5 @@
 package hello;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.URL;
-
 public class Game {
 	// fichier avec la liste des mots :
 	private static String fichier = "/mots.txt";
@@ -49,7 +43,7 @@ public class Game {
 
 	public static String playLetter(String input) {
 
-		char lettreJouee = input.charAt(0);
+		char lettreJouee = input.toLowerCase().charAt(0);
 
 		if (strAlphabet.indexOf(lettreJouee) == -1) {	// la lettre ne fait pas partie de l'alphabet
 			return("Lettre invalide !");
