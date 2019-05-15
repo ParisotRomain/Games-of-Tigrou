@@ -18,19 +18,13 @@ public class PenduController {
 		if (newGame)
 			Game.initNewGame();
 
-		String inputOk = Game.playLetter(letter);
+		String messageToUser = Game.playLetter(letter);
 		model.addAttribute("drawing", Game.getDrawing());
 		model.addAttribute("wordToFind", Game.getMotAAfficher());
 
 		switch (Game.getStatus()) {
 		case "Ongoing":
-			if (inputOk != "OK") {
-				model.addAttribute("letter", inputOk);
-			} else {
-				model.addAttribute("letter", letter.charAt(0));
-			}
-//			model.addAttribute("drawing", Game.getDrawing());
-//			model.addAttribute("wordToFind", Game.getMotAAfficher());
+			model.addAttribute("letter", messageToUser);
 			return "pendu";
 		case "Lost":
 			model.addAttribute("gameWon", false);

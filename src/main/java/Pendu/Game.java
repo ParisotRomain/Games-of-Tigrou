@@ -2,7 +2,8 @@ package Pendu;
 
 public class Game {
 	// fichier avec la liste des mots :
-	private static String fichier = "/mots.txt";
+//	private static String fichier = "/mots.txt";
+	private static String fichier = "MOTS";		// variable d'environnement Heroku qui contient les mots
 
 	// on crée une liste avec les lettres possible et une avec les lettres jouées
 	private static String strAlphabet = "abcdefghijklmnopqrstuvwxyz";
@@ -69,7 +70,7 @@ public class Game {
 			erreurs++;
 		}
 
-		return("OK");
+		return("Vous avez jooué le " + lettreJouee);
 	}
 
 

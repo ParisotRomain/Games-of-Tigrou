@@ -20,8 +20,10 @@ public class MotAleatoireFichier {
 		try {
 			// On ouvre le fichier contenant la liste de mots
 //			URL url = Game.class.getResource(fichier);
-//			File reader = new File(url.getPath());	// can't find the file on webApp
-			InputStream inputStream = new ByteArrayInputStream(System.getenv("MOTS").getBytes(Charset.forName("UTF-8")));
+//			File reader = new File(url.getPath());
+			// Le fichier n'est pas accessible en webApp
+			// On change pour un InputStream via une variable d'environnement
+			InputStream inputStream = new ByteArrayInputStream(System.getenv(fichier).getBytes(Charset.forName("UTF-8")));
 	        BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 			
 			Scanner sc = new Scanner(reader);
@@ -44,7 +46,7 @@ public class MotAleatoireFichier {
 			int index = rand.nextInt(nbrMots);
 
 			// On va récupèrer le mot à l'indice choisi
-			inputStream = new ByteArrayInputStream(System.getenv("MOTS").getBytes(Charset.forName("UTF-8")));
+			inputStream = new ByteArrayInputStream(System.getenv(fichier).getBytes(Charset.forName("UTF-8")));
 			reader = new BufferedReader(new InputStreamReader(inputStream));
 			
 			sc = new Scanner(reader);
