@@ -1,17 +1,17 @@
-	@font-face {
-		font-family: 'Roboto Mono', monospace;
-			src: "https://fonts.googleapis.com/css?family=Roboto+Mono";
-		font-family: 'VT323', monospace;
-			src: "https://fonts.googleapis.com/css?family=VT323";
-		font-family: 'Share Tech Mono', monospace;
-			src: "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
-		font-family: 'Nova Mono', monospace;
-			src: "https://fonts.googleapis.com/css?family=Nova+Mono";
-	}
+/* @font-face {
+	font-family: 'Roboto Mono', monospace;
+		src: "https://fonts.googleapis.com/css?family=Roboto+Mono";
+	font-family: 'VT323', monospace;
+		src: "https://fonts.googleapis.com/css?family=VT323";
+	font-family: 'Share Tech Mono', monospace;
+		src: "https://fonts.googleapis.com/css?family=Share+Tech+Mono";
+	font-family: 'Nova Mono', monospace;
+		src: "https://fonts.googleapis.com/css?family=Nova+Mono";
+} */
 
-	body {
-		font-family: 'Share Tech Mono';
-		display: flex;
-		width: 100%;
-		font-size: 10vmin;
-	}
+body {
+	font-family: 'Share Tech Mono', monospace;
+	display: flex;
+	width: 100%;
+	font-size: 10vmin;
+}
