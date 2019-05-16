@@ -15,7 +15,7 @@
 	</head>
 	<body>
 
-		<p th:text="${#strings.replace(#strings.escapeJava(letter),'\\','\')}" />
+		<p th:text="${newGame} ? 'Bienvenue dans le jeu du pendu' : ${#strings.replace(#strings.escapeJava(letter),'\\','\')}" />
 
 		<p th:utext="${#strings.replace(#strings.replace(#strings.replace(
 					#strings.escapeJava(drawing),' ','&nbsp')
@@ -25,8 +25,8 @@
 		<p th:text="${#strings.replace(#strings.escapeJava(wordToFind),' ','&nbsp')}"></p>
 
 		<form action="/pendu" autocomplete="off">
-			<input type= "text" name="letter" maxlength="1" autocomplete="off" autofocus>
-			<button type="submit">OK</button>
+			<input type= "text" name="letter" maxlength="1" autocomplete="off" autofocus placeholder="Entrez une lettre ici">
+			<input type="submit" value="OK">
 		</form>
 
 		<footer>

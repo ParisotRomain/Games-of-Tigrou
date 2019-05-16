@@ -20,7 +20,6 @@ public class PenduController {
 
 		if (newGame) {
 			session.setAttribute("Game", new Game());
-//			Game.initNewGame();
 		}
 		
 		Game game = (Game) session.getAttribute("Game");
