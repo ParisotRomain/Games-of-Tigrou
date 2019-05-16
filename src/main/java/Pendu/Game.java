@@ -7,19 +7,19 @@ public class Game {
 
 	// on crée une liste avec les lettres possible et une avec les lettres jouées
 	private static String strAlphabet = "abcdefghijklmnopqrstuvwxyz";
-	private static String strJouees   = "..........................";
+	private  String strJouees   = "..........................";
 	private static char[] alphabet = strAlphabet.toCharArray();
-	private static char[] jouees   = strJouees  .toCharArray();
+	private  char[] jouees   = strJouees  .toCharArray();
 	// pour enlever les accents du mot à trouver
 	private static char[] avecAccents = "àâéèêîïôùû".toCharArray();
 	private static char[] sansAccents = "aaeeeiiouu".toCharArray();
 
-	private static String motATrouver = "hello";
-	private static String motAAfficher= ".....";
+	private  String motATrouver = "hello";
+	private  String motAAfficher= ".....";
 
-	private static Integer erreurs = 0;
+	private  Integer erreurs = 0;
 
-	public static void initNewGame() {
+	public  void initNewGame() {
 		// au début du jeu, on n'a joué aucune lettre
 		strJouees = "..........................";
 		jouees = strJouees.toCharArray();
@@ -42,7 +42,7 @@ public class Game {
 	}
 
 
-	public static String playLetter(String input) {
+	public  String playLetter(String input) {
 
 		char lettreJouee = input.toLowerCase().charAt(0);
 
@@ -74,7 +74,7 @@ public class Game {
 	}
 
 
-	public static String getDrawing() {
+	public  String getDrawing() {
 		switch (erreurs) {
 		case 0 :
 			return(" " + strJouees.substring( 0, 4) +   " |                          \n"
@@ -163,7 +163,7 @@ public class Game {
 	}
 
 
-	public static String getMotAAfficher() {
+	public  String getMotAAfficher() {
 		if (motAAfficher == motATrouver) 	// game won
 			return String.format("%"+(30-motAAfficher.length())/2+"s", " ") +"\\  " + motAAfficher + "  /";
 		else if (erreurs < 8) 				// game ongoing
@@ -173,16 +173,16 @@ public class Game {
 	}
 
 
-	public static Integer getErreurs() {
+	public  Integer getErreurs() {
 		return erreurs;
 	}
 
 
-	public static void setMotATrouver(String motATrouver) {
-		Game.motATrouver = motATrouver;
+	public  void setMotATrouver(String motATrouver) {
+		this.motATrouver = motATrouver;
 	}
 	
-	public static String getStatus() {
+	public  String getStatus() {
 		if (erreurs >= 8)
 			return "Lost";
 		else if (motAAfficher == motATrouver)
@@ -190,4 +190,11 @@ public class Game {
 		else
 			return "Ongoing";
 	}
+
+
+	public Game() {
+		super();
+		this.initNewGame();
+	}
+	
 }

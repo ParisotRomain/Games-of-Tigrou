@@ -1,5 +1,7 @@
 package hello;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,16 +15,21 @@ public class PenduController {
 	@GetMapping("/pendu")
 	public String greeting(@RequestParam(name="letter" , required=false, defaultValue=" "   ) String letter,
 			@RequestParam(name="newGame", required=false, defaultValue="false") boolean newGame,
-			Model model) {
+			Model model,
+			HttpSession session) {
 
-		if (newGame)
-			Game.initNewGame();
+		if (newGame) {
+			session.setAttribute("Game", new Game());
+//			Game.initNewGame();
+		}
+		
+		Game game = (Game) session.getAttribute("Game");
 
-		String messageToUser = Game.playLetter(letter);
-		model.addAttribute("drawing", Game.getDrawing());
-		model.addAttribute("wordToFind", Game.getMotAAfficher());
+		String messageToUser = game.playLetter(letter);
+		model.addAttribute("drawing", game.getDrawing());
+		model.addAttribute("wordToFind", game.getMotAAfficher());
 
-		switch (Game.getStatus()) {
+		switch (game.getStatus()) {
 		case "Ongoing":
 			model.addAttribute("letter", messageToUser);
 			return "pendu";
