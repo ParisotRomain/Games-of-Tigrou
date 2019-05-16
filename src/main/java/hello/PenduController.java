@@ -20,6 +20,7 @@ public class PenduController {
 
 		if (newGame) {
 			session.setAttribute("Game", new Game());
+			model.addAttribute("newGame", true);
 		}
 		
 		Game game = (Game) session.getAttribute("Game");
